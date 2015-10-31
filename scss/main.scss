@@ -1,0 +1,5 @@
+@import 'normalize', 'mixins/cards';
+
+.cards {
+  @include cards(300px);
+}

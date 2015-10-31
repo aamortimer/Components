@@ -1,0 +1,53 @@
+@mixin cards($width: 300px) {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .card {
+    flex-direction: column;
+    display: flex;
+    flex: 1 1 $width;
+    margin: 10px;
+    border: 1px solid #efefef;
+
+    @at-root #{&}__content {
+      padding: 10px;
+      display: inline-block;
+
+      @at-root #{&}__title {
+        margin: 0;
+        font-size: 1.5em;
+      }
+    }
+
+    @at-root #{&}__figure {
+      margin: 0;
+      img {
+        width: 100%;
+      }
+    }
+
+    @at-root #{&}--cover {
+      position: relative;
+
+      @at-root #{&}__content {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+        color: #fff;
+        width: 100%;
+
+        a {
+          color: #fff;
+        }
+      }
+    }
+
+    @at-root #{&}--rounded {
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+  }
+}
